@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -29,18 +30,26 @@ namespace WebAPI_IndigoStuff.Controllers
         }
 
         // POST api/recordtypes
-        public void Post([FromBody]string value)
+        public void Post([FromBody]RecordType recordType)
         {
+            RecordTypeRepository r = new RecordTypeRepository();
+            r.Add(recordType);
         }
 
         // PUT api/recordtypes/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]RecordType recordType)
         {
+            recordType.Id = id;
+
+            RecordTypeRepository r = new RecordTypeRepository();
+            r.Update(recordType);
         }
 
         // DELETE api/recordtypes/5
         public void Delete(int id)
         {
+            RecordTypeRepository r = new RecordTypeRepository();
+            r.Remove(id);
         }
 
     }

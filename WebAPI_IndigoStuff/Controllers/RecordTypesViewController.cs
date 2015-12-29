@@ -72,7 +72,6 @@ namespace WebAPI_IndigoStuff.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            RecordType recordtype = new RecordType();
             RecordTypeRepository r = new RecordTypeRepository();
             r.Remove(id);
 
