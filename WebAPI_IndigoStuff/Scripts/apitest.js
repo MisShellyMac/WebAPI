@@ -35,3 +35,18 @@ function callCreateRecordTypeApi() {
         success: function () { document.location.href = "/"; }
     });
 }
+
+function callCreateDataRecordApi() {
+    var data = $("#Data").val();
+    var dateAdded = $("#DateAdded").val();
+
+    var obj = { Data: data, DateAdded: dateAdded };
+
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify(obj),
+        url: "/api/datarecords",
+        contentType: "application/json",
+        success: function () { document.location.href = "/"; }
+    });
+}

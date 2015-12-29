@@ -47,7 +47,7 @@ namespace WebAPI_IndigoStuff.DataLayer
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "update DataRecords set Data=@data, DateAdded=@dateadded, Purpose=@purpose, where id = @id",
+                    "update DataRecords set Data=@data, DateAdded=@dateadded where id = @id",
                     this.db);
                 command.Parameters.AddWithValue("@data", datarecord.Data);
                 command.Parameters.AddWithValue("@dateadded", datarecord.DateAdded);

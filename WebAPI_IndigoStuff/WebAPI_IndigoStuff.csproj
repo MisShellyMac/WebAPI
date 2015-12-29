@@ -213,6 +213,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DataRecordsController.cs" />
     <Compile Include="Controllers\RecordTypesController.cs" />
+    <Compile Include="Controllers\DataRecordsViewController.cs" />
     <Compile Include="Controllers\RecordTypesViewController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataLayer\DataRecordRepository.cs" />
@@ -290,6 +291,10 @@
     <Content Include="Views\RecordTypesView\Create.cshtml" />
     <Content Include="Views\RecordTypesView\Edit.cshtml" />
     <Content Include="Views\RecordTypesView\Delete.cshtml" />
+    <Content Include="Views\DataRecordsView\Create.cshtml" />
+    <Content Include="Views\DataRecordsView\Edit.cshtml" />
+    <Content Include="Views\DataRecordsView\Delete.cshtml" />
+    <Content Include="Views\DataRecordsView\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
