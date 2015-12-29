@@ -24,7 +24,7 @@ namespace WebAPI_IndigoStuff.DataLayer
             return this.db.Query<DataRecord>("select * from DataRecords where id=@id", dbArgs).First();
         }
 
-        public void Add(DataRecord recordtype)
+        public void Add(DataRecord datarecord)
         {
             db.Open();
             try
@@ -32,8 +32,8 @@ namespace WebAPI_IndigoStuff.DataLayer
                 SqlCommand command = new SqlCommand(
                     "insert into DataRecords (Data, DateAdded) values (@data, @dateadded)",
                     this.db);
-                command.Parameters.AddWithValue("@data", recordtype.Data);
-                command.Parameters.AddWithValue("@dateadded", recordtype.DateAdded);       
+                command.Parameters.AddWithValue("@data", datarecord.Data);
+                command.Parameters.AddWithValue("@dateadded", datarecord.DateAdded);       
             }
             finally
             {

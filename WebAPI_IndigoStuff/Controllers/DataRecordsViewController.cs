@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WebAPI_IndigoStuff.DataLayer;
 using WebAPI_IndigoStuff.Models;
@@ -28,6 +25,7 @@ namespace WebAPI_IndigoStuff.Controllers
             DataRecord datarecord = new DataRecord();
             datarecord.Data = collection.GetValue("Data").AttemptedValue.ToString(); 
             datarecord.DateAdded = DateTime.Parse(collection.GetValue("DateAdded").AttemptedValue.ToString());
+
             DataRecordRepository r = new DataRecordRepository();
             r.Add(datarecord);
 
