@@ -211,7 +211,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\RecordTypesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RecordTypesViewController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Models\RecordType.cs" />
     <Compile Include="DataLayer\RecordTypeRepository.cs" />
@@ -280,6 +280,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\RecordTypesView\Index.cshtml" />
+    <Content Include="Views\RecordTypesView\Create.cshtml" />
+    <Content Include="Views\RecordTypesView\Edit.cshtml" />
+    <Content Include="Views\RecordTypesView\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,5 +29,7 @@ namespace WebAPI_IndigoStuff.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WebAPI_IndigoStuff.Models.RecordType> RecordTypes { get; set; }
     }
 }

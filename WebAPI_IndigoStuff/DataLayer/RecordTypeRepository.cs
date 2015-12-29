@@ -34,7 +34,7 @@ namespace WebAPI_IndigoStuff.DataLayer
                     this.db);
                 command.Parameters.AddWithValue("@description", recordtype.Description);
                 command.Parameters.AddWithValue("@mailto", recordtype.MailTo);
-                command.Parameters.AddWithValue("@datedadded", recordtype.DateAdded);
+                command.Parameters.AddWithValue("@dateadded", recordtype.DateAdded);
                 command.Parameters.AddWithValue("@purpose", recordtype.Purpose);
                 command.Parameters.AddWithValue("@expectedenddate", recordtype.ExpectedEndDate);
                 command.ExecuteNonQuery();
@@ -55,9 +55,10 @@ namespace WebAPI_IndigoStuff.DataLayer
                     this.db);
                 command.Parameters.AddWithValue("@description", recordtype.Description);
                 command.Parameters.AddWithValue("@mailto", recordtype.MailTo);
-                command.Parameters.AddWithValue("@datedadded", recordtype.DateAdded);
+                command.Parameters.AddWithValue("@dateadded", recordtype.DateAdded);
                 command.Parameters.AddWithValue("@purpose", recordtype.Purpose);
                 command.Parameters.AddWithValue("@expectedenddate", recordtype.ExpectedEndDate);
+                command.Parameters.AddWithValue("@id", recordtype.Id);
                 command.ExecuteNonQuery();
             }
             finally
