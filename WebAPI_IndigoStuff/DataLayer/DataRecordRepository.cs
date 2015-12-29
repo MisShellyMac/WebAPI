@@ -21,7 +21,7 @@ namespace WebAPI_IndigoStuff.DataLayer
             dbArgs.Add("id", id);
 
 
-            return this.db.Query<DataRecord>("select * from RecordTypes where id=@id", dbArgs).First();
+            return this.db.Query<DataRecord>("select * from DataRecords where id=@id", dbArgs).First();
         }
 
         public void Add(DataRecord recordtype)
@@ -30,14 +30,10 @@ namespace WebAPI_IndigoStuff.DataLayer
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "insert into RecordTypes (Description, MailTo, DateAdded, Purpose, ExpectedEndDate) values (@description, @mailto, @dateadded, @purpose, @expectedenddate)",
+                    "insert into DataRecords (Data, DateAdded) values (@data, @dateadded)",
                     this.db);
-                command.Parameters.AddWithValue("@description", recordtype.Description);
-                command.Parameters.AddWithValue("@mailto", recordtype.MailTo);
-                command.Parameters.AddWithValue("@dateadded", recordtype.DateAdded);
-                command.Parameters.AddWithValue("@purpose", recordtype.Purpose);
-                command.Parameters.AddWithValue("@expectedenddate", recordtype.ExpectedEndDate);
-                command.ExecuteNonQuery();
+                command.Parameters.AddWithValue("@data", recordtype.Data);
+                command.Parameters.AddWithValue("@dateadded", recordtype.DateAdded);       
             }
             finally
             {
@@ -45,20 +41,17 @@ namespace WebAPI_IndigoStuff.DataLayer
             }
         }
 
-        public void Update(DataRecord recordtype)
+        public void Update(DataRecord datarecord)
         {
             db.Open();
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "update RecordTypes set Description=@description, MailTo=@mailto, DateAdded=@dateadded, Purpose=@purpose, ExpectedEndDate=@expectedenddate where id = @id",
+                    "update DataRecords set Data=@data, DateAdded=@dateadded, Purpose=@purpose, where id = @id",
                     this.db);
-                command.Parameters.AddWithValue("@description", recordtype.Description);
-                command.Parameters.AddWithValue("@mailto", recordtype.MailTo);
-                command.Parameters.AddWithValue("@dateadded", recordtype.DateAdded);
-                command.Parameters.AddWithValue("@purpose", recordtype.Purpose);
-                command.Parameters.AddWithValue("@expectedenddate", recordtype.ExpectedEndDate);
-                command.Parameters.AddWithValue("@id", recordtype.Id);
+                command.Parameters.AddWithValue("@data", datarecord.Data);
+                command.Parameters.AddWithValue("@dateadded", datarecord.DateAdded);
+                command.Parameters.AddWithValue("@id", datarecord.Id);
                 command.ExecuteNonQuery();
             }
             finally
@@ -72,7 +65,7 @@ namespace WebAPI_IndigoStuff.DataLayer
             db.Open();
             try
             {
-                SqlCommand command = new SqlCommand("delete from RecordTypes where id = @id", this.db);
+                SqlCommand command = new SqlCommand("delete from DataRecords where id = @id", this.db);
                 command.Parameters.AddWithValue("@id", id);
                 command.ExecuteNonQuery();
             }

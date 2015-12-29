@@ -21,7 +21,7 @@ namespace WebAPI_IndigoStuff.DataLayer
             dbArgs.Add("id", id);
 
 
-            return this.db.Query<DataRecord>("select * from RecordTypes where id=@id", dbArgs).First();
+            return this.db.Query<RecordType>("select * from RecordTypes where id=@id", dbArgs).First();
         }
 
         public void Add(RecordType recordtype)

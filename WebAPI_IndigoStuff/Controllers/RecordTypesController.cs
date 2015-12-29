@@ -1,54 +1,48 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-using System.Web.Mvc;
 using WebAPI_IndigoStuff.DataLayer;
 using WebAPI_IndigoStuff.Models;
 
 namespace WebAPI_IndigoStuff.Controllers
 {
-   
+
     public class RecordTypesController : ApiController
     {
 
         // GET api/recordtypes
-        public IEnumerable<DataRecord> Get()
+        public IEnumerable<RecordType> Get()
         {
-            DataRecordRepository r = new DataRecordRepository();
+            RecordTypeRepository r = new RecordTypeRepository();
             return r.GetAll();
         }
 
         // GET api/recordtypes/5
-        public DataRecord Get(int id)
+        public RecordType Get(int id)
         {
-            DataRecordRepository r = new DataRecordRepository();
+            RecordTypeRepository r = new RecordTypeRepository();
             return r.Find(id);
         }
 
         // POST api/recordtypes
-        public void Post([FromBody]DataRecord recordType)
+        public void Post([FromBody]RecordType recordType)
         {
-            DataRecordRepository r = new DataRecordRepository();
+            RecordTypeRepository r = new RecordTypeRepository();
             r.Add(recordType);
         }
 
         // PUT api/recordtypes/5
-        public void Put(int id, [FromBody]DataRecord recordType)
+        public void Put(int id, [FromBody]RecordType recordType)
         {
             recordType.Id = id;
 
-            DataRecordRepository r = new DataRecordRepository();
+            RecordTypeRepository r = new RecordTypeRepository();
             r.Update(recordType);
         }
 
         // DELETE api/recordtypes/5
         public void Delete(int id)
         {
-            DataRecordRepository r = new DataRecordRepository();
+            RecordTypeRepository r = new RecordTypeRepository();
             r.Remove(id);
         }
 
