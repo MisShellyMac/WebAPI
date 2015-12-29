@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebAPI_IndigoStuff.Models
 {
-    public class RecordType
+    public class DataRecord
     {
         public int Id { get; set; }
         public string Description { get; set; }

@@ -12,7 +12,7 @@ namespace WebAPI_IndigoStuff.Controllers
     {
         public ActionResult Index()
         {
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             var recordTypes = r.GetAll();
             return View(recordTypes);
         }
@@ -25,14 +25,14 @@ namespace WebAPI_IndigoStuff.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            RecordType recordtype = new RecordType();
+            DataRecord recordtype = new DataRecord();
             recordtype.Description = collection.GetValue("Description").AttemptedValue.ToString();
             recordtype.MailTo = collection.GetValue("MailTo").AttemptedValue.ToString();
             recordtype.DateAdded = DateTime.Parse(collection.GetValue("DateAdded").AttemptedValue.ToString());
             recordtype.Purpose = collection.GetValue("Purpose").AttemptedValue.ToString();
             recordtype.ExpectedEndDate = DateTime.Parse(collection.GetValue("ExpectedEndDate").AttemptedValue.ToString());
 
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             r.Add(recordtype);
 
             return RedirectToAction("Index");
@@ -40,15 +40,15 @@ namespace WebAPI_IndigoStuff.Controllers
 
         public ActionResult Edit(int id)
         {
-            RecordTypeRepository r = new RecordTypeRepository();
-            RecordType recordtype = r.Find(id);
+            DataRecordRepository r = new DataRecordRepository();
+            DataRecord recordtype = r.Find(id);
             return View(recordtype);
         }
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            RecordType recordtype = new RecordType();
+            DataRecord recordtype = new DataRecord();
             recordtype.Description = collection.GetValue("Description").AttemptedValue.ToString();
             recordtype.MailTo = collection.GetValue("MailTo").AttemptedValue.ToString();
             recordtype.DateAdded = DateTime.Parse(collection.GetValue("DateAdded").AttemptedValue.ToString());
@@ -56,7 +56,7 @@ namespace WebAPI_IndigoStuff.Controllers
             recordtype.ExpectedEndDate = DateTime.Parse(collection.GetValue("ExpectedEndDate").AttemptedValue.ToString());
             recordtype.Id = id;
 
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             r.Update(recordtype);
 
             return RedirectToAction("Index");
@@ -64,15 +64,15 @@ namespace WebAPI_IndigoStuff.Controllers
     
         public ActionResult Delete(int id)
         {
-            RecordTypeRepository r = new RecordTypeRepository();
-            RecordType recordtype = r.Find(id);
+            DataRecordRepository r = new DataRecordRepository();
+            DataRecord recordtype = r.Find(id);
             return View(recordtype);
         }
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             r.Remove(id);
 
             return RedirectToAction("Index");

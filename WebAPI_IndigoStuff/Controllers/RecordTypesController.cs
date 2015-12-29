@@ -16,39 +16,39 @@ namespace WebAPI_IndigoStuff.Controllers
     {
 
         // GET api/recordtypes
-        public IEnumerable<RecordType> Get()
+        public IEnumerable<DataRecord> Get()
         {
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             return r.GetAll();
         }
 
         // GET api/recordtypes/5
-        public RecordType Get(int id)
+        public DataRecord Get(int id)
         {
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             return r.Find(id);
         }
 
         // POST api/recordtypes
-        public void Post([FromBody]RecordType recordType)
+        public void Post([FromBody]DataRecord recordType)
         {
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             r.Add(recordType);
         }
 
         // PUT api/recordtypes/5
-        public void Put(int id, [FromBody]RecordType recordType)
+        public void Put(int id, [FromBody]DataRecord recordType)
         {
             recordType.Id = id;
 
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             r.Update(recordType);
         }
 
         // DELETE api/recordtypes/5
         public void Delete(int id)
         {
-            RecordTypeRepository r = new RecordTypeRepository();
+            DataRecordRepository r = new DataRecordRepository();
             r.Remove(id);
         }
 
