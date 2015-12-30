@@ -72,7 +72,6 @@ c:\users\michelle.mccarthy\documents\visual studio 2015\Projects\WebAPI_IndigoSt
 c:\users\michelle.mccarthy\documents\visual studio 2015\Projects\WebAPI_IndigoStuff\WebAPI_IndigoStuff\bin\Microsoft.Owin.Security.Twitter.xml
 c:\users\michelle.mccarthy\documents\visual studio 2015\Projects\WebAPI_IndigoStuff\WebAPI_IndigoStuff\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\michelle.mccarthy\documents\visual studio 2015\Projects\WebAPI_IndigoStuff\WebAPI_IndigoStuff\bin\System.Web.Http.Owin.xml
-c:\users\michelle.mccarthy\documents\visual studio 2015\Projects\WebAPI_IndigoStuff\WebAPI_IndigoStuff\obj\Debug\WebAPI_IndigoStuff.csprojResolveAssemblyReference.cache
 c:\users\michelle.mccarthy\documents\visual studio 2015\Projects\WebAPI_IndigoStuff\WebAPI_IndigoStuff\obj\Debug\WebAPI_IndigoStuff.dll
 c:\users\michelle.mccarthy\documents\visual studio 2015\Projects\WebAPI_IndigoStuff\WebAPI_IndigoStuff\obj\Debug\WebAPI_IndigoStuff.pdb
 c:\users\michelle.mccarthy\documents\visual studio 2015\Projects\WebAPI_IndigoStuff\WebAPI_IndigoStuff\bin\Dapper.dll

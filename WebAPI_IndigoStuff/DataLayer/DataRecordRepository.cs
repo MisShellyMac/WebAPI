@@ -30,10 +30,12 @@ namespace WebAPI_IndigoStuff.DataLayer
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "insert into DataRecords (Data, DateAdded) values (@data, @dateadded)",
+                    "insert into DataRecords (Data, DateAdded, RecordTypeId) values (@data, @dateadded, @recordtypeId)",
                     this.db);
                 command.Parameters.AddWithValue("@data", datarecord.Data);
-                command.Parameters.AddWithValue("@dateadded", datarecord.DateAdded);       
+                command.Parameters.AddWithValue("@dateadded", datarecord.DateAdded);
+                command.Parameters.AddWithValue("@recordtypeId", datarecord.RecordTypeId);
+                command.ExecuteNonQuery();
             }
             finally
             {
@@ -47,11 +49,12 @@ namespace WebAPI_IndigoStuff.DataLayer
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "update DataRecords set Data=@data, DateAdded=@dateadded where id = @id",
+                    "update DataRecords set Data=@data, DateAdded=@dateadded, RecordTypeId=@recordtypeId where id = @id",
                     this.db);
                 command.Parameters.AddWithValue("@data", datarecord.Data);
                 command.Parameters.AddWithValue("@dateadded", datarecord.DateAdded);
                 command.Parameters.AddWithValue("@id", datarecord.Id);
+                command.Parameters.AddWithValue("@recordtypeId", datarecord.RecordTypeId);
                 command.ExecuteNonQuery();
             }
             finally

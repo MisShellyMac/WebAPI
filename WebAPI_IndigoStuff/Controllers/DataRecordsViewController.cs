@@ -25,7 +25,8 @@ namespace WebAPI_IndigoStuff.Controllers
             DataRecord datarecord = new DataRecord();
             datarecord.Data = collection.GetValue("Data").AttemptedValue.ToString(); 
             datarecord.DateAdded = DateTime.Parse(collection.GetValue("DateAdded").AttemptedValue.ToString());
-
+            datarecord.RecordTypeId = int.Parse(collection.GetValue
+                ("RecordTypeId").AttemptedValue.ToString());
             DataRecordRepository r = new DataRecordRepository();
             r.Add(datarecord);
 
@@ -46,6 +47,8 @@ namespace WebAPI_IndigoStuff.Controllers
             datarecord.Data = collection.GetValue("Data").AttemptedValue.ToString();
             datarecord.DateAdded = DateTime.Parse(collection.GetValue("DateAdded").AttemptedValue.ToString());
             datarecord.Id = id;
+            datarecord.RecordTypeId = int.Parse(collection.GetValue
+                ("RecordTypeId").AttemptedValue.ToString());
 
             DataRecordRepository r = new DataRecordRepository();
             r.Update(datarecord);

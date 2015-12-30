@@ -36,17 +36,35 @@ function callCreateRecordTypeApi() {
     });
 }
 
+function callEditDataRecordApi() {
+    var id = $("#Id").val();
+    var data = $("#Data").val();
+    var dateAdded = $("#DateAdded").val();
+    var recordTypeId = $("#RecordTypeId").val();
+
+    var obj = { Data: data, DateAdded: dateAdded, RecordTypeId: recordTypeId };
+
+    $.ajax({
+        type: "PUT",
+        data: JSON.stringify(obj),
+        url: "/api/datarecords/" + id,
+        contentType: "application/json",
+        success: function () { document.location.href = "/DataRecordsView"; }
+    });
+}
+
 function callCreateDataRecordApi() {
     var data = $("#Data").val();
     var dateAdded = $("#DateAdded").val();
+    var recordTypeId = $("#RecordTypeId").val();
 
-    var obj = { Data: data, DateAdded: dateAdded };
+    var obj = { Data: data, DateAdded: dateAdded, RecordTypeId: recordTypeId};
 
     $.ajax({
         type: "POST",
         data: JSON.stringify(obj),
         url: "/api/datarecords",
         contentType: "application/json",
-        success: function () { document.location.href = "/"; }
+        success: function () { document.location.href = "/DataRecordsView"; }
     });
 }
